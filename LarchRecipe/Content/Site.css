@@ -1,13 +1,18 @@
-﻿html {
+﻿/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */﻿
+html {    
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    padding-top: 50px;
     height: 100%;
     width: 100%;
 }
 
 body {
-    padding-top: 50px;
-    height: 100%;
-    width: 100%;
+    margin: 0;
 }
+
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -18,23 +23,17 @@ body {
 */
 .dl-horizontal dt {
     white-space: normal;
+    margin: 0;
 }
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
+/*
     max-width: 280px;
 }
+    */
 
 .carousel {
     height: 100%;
     width: 100%;
-}
 
-.carousel {
-    height: 100%;
-    width: 100%;
 }
 
 .carousel-inner {
@@ -60,13 +59,13 @@ img.logo {
     margin-left: auto;
     margin-right: auto;
 }
-
+/*
 a.navbar-brand {
     background: url(~/Content/img/lil-larch.png) no-repeat top left;
     display: block;
     width: 340px;
     height: auto;
-    /*text-indent: -9999px; /* hides the link text */
+    text-indent: -9999px; /* hides the link text */
 }
 
 .serving-input {
@@ -81,4 +80,192 @@ a.navbar-brand {
 
 ul {
     list-style-type: none;
+}
+
+.container {
+    width: 100%;
+}
+
+.navbar {
+    background-color: #320d08;
+}
+
+    .navbar .nav {
+        font-family: "Lora", sans-serif;
+    }
+
+        .navbar .nav ul {
+            margin: 10px;
+            display: flex;
+            justify-content: space-around;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+            .navbar .nav ul li a {
+                color: #ffffff;
+            }
+/*
+.logo {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    bottom: 54.5%;
+    margin: 0;
+    padding: 0;
+    font-family: "Courgette", sans-serif;
+    font-size: 36px;
+    text-align: center;
+    text-shadow: #222222;
+    z-index: 1;
+}
+    */
+/*
+.item {
+    align-items: center;
+    max-width: none;
+    height: 100%;
+    top: 0;
+    left: 0;
+    height: auto;
+    min-width: 100%;
+}
+
+   */ 
+
+.carousel {
+    margin: 0 auto;
+    max-width: 100%;
+    background-color: #320d08;
+}
+
+#carousel-example-generic.carousel.slide {
+    background-color: #320d08;
+}
+ /*   
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border: 3px solid #320d08;
+    flex: 1;
+    overflow: hidden;
+    background-color: #082e32;
+}
+
+    .content p {
+        margin: 10px;
+        padding: 10px;
+        font-size: 24px;
+    }
+     */
+.about-tittle {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
+.about-content {
+    display: flex;
+}
+
+@media (max-width: 650px) {
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-top: -50px;
+    }
+}
+
+.about-column1, .about-column2 {
+    flex: 1;
+    height: auto;
+    text-align: center;
+}
+
+.about {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.menu-tittle {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+.menu-cover {
+    width: 100%;
+    height: 30%;
+}
+
+.menu-content-main {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: justify;
+    text-align: center;
+}
+
+    .menu-content-main h1 {
+        margin-top: 20px;
+        font-size: 26px;
+    }
+
+@media (max-width: 560px) {
+    .menu-content-main h1 {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+.menu-content-main p {
+    margin-top: 20px;
+    font-size: 16px;
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 560px) {
+    .menu-content-main p {
+        font-size: 14px;
+    }
+}
+
+.menu-content-body ol {
+    width: 80%;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 20px;
+    line-height: 29px;
+    text-align: left;
+}
+
+    .menu-content-body ol li {
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+@media (max-width: 560px) {
+    .menu-content-body ol li {
+        font-size: 12px;
+        list-style: decimal;
+        text-align: left;
+        letter-spacing: 0px;
+    }
+}
+
+/*# sourceMappingURL=main.css.map */
+.body-content {
+    padding-top: 60px;
 }

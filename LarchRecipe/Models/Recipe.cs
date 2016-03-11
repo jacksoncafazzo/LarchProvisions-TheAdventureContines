@@ -23,6 +23,12 @@ namespace LarchRecipe.Models
         }
     }
 
+    public class RecipesDBContext : DbContext
+    {
+        public DbSet<Recipe> Recipe { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+    }
+
     public class Ingredient
     {
         public int ID { get; set; }
@@ -55,11 +61,4 @@ namespace LarchRecipe.Models
             return d.ToString("0.##");
         }
     }
-}
-
-public class RecipesDBContext : DbContext
-{
-    public DbSet<Recipe> Recipe { get; set; }
-    public DbSet<Ingredient> Ingredients { get; set; }
-}
 }
