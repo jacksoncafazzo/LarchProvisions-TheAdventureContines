@@ -16,10 +16,17 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
+
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Larch Provisions", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Larch Provisions", "Index", "Home", new
+           {
+               area = ""
+           }, new
+           {
+               @class = "navbar-brand"
+           })
             </div>
 
             <div class="navbar-collapse collapse">
@@ -27,6 +34,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
                     <li>@Html.ActionLink("Recipes", "Index", "Recipes")</li>
                     <li>@Html.ActionLink("Ingredients", "Index", "Ingredients")</li>
                 </ul>

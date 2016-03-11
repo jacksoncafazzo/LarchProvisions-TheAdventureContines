@@ -1,5 +1,6 @@
-﻿/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */﻿
-html {    
+﻿/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+﻿ html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -10,9 +11,9 @@ html {
 
 body {
     margin: 0;
+    background-color: #320d08;
+    color: white;
 }
-
-
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -33,7 +34,6 @@ body {
 .carousel {
     height: 100%;
     width: 100%;
-
 }
 
 .carousel-inner {
@@ -51,7 +51,7 @@ img.carousel-inner {
 }
 
     .carousel-caption h4 {
-        font-size: 1em;
+        font-size: 1.4em;
     }
 
 img.logo {
@@ -66,7 +66,6 @@ a.navbar-brand {
     width: 340px;
     height: auto;
     text-indent: -9999px; /* hides the link text */
-}
 
 .serving-input {
     width: 71px;
@@ -131,7 +130,7 @@ ul {
     min-width: 100%;
 }
 
-   */ 
+   */
 
 .carousel {
     margin: 0 auto;
@@ -142,7 +141,7 @@ ul {
 #carousel-example-generic.carousel.slide {
     background-color: #320d08;
 }
- /*   
+/*
 .content {
     display: flex;
     justify-content: flex-start;
@@ -269,3 +268,11 @@ ul {
 .body-content {
     padding-top: 60px;
 }
+
+tr {
+    font-size: 1.4em;
+}
+
+    tr a {
+        color: #9c7840;
+    }
