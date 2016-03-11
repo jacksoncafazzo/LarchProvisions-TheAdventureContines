@@ -68,3 +68,17 @@ a.navbar-brand {
     height: auto;
     /*text-indent: -9999px; /* hides the link text */
 }
+
+.serving-input {
+    width: 71px;
+    font-size: 2em;
+}
+
+.ingredients {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+ul {
+    list-style-type: none;
+}

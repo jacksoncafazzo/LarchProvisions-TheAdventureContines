@@ -15,7 +15,7 @@ namespace LarchRecipe.Controllers
     {
         private RecipesDBContext db = new RecipesDBContext();
 
-        Repository _repository = new Repository();
+        private Repository _repository = new Repository();
 
         // GET: Recipes
         public ActionResult Index()
@@ -26,7 +26,7 @@ namespace LarchRecipe.Controllers
         // GET: Recipes/Create
         public ActionResult Create()
         {
-           ViewBag.Recipes = _repository.GetRecipes();
+            ViewBag.Recipes = _repository.GetRecipes();
             return View();
         }
 
@@ -128,6 +128,9 @@ namespace LarchRecipe.Controllers
 
             ViewBag.Recipe = db.Recipe.Find(id);
             ViewBag.Ingredient = _repository.GetRecipeIngredients(id);
+            ViewBag.Recipes = db.Recipe.ToList();
+            ViewBag.Ingredients = db.Ingredients.ToList();
+
             return View();
         }
 

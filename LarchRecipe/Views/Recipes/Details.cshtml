@@ -1,46 +1,111 @@
-﻿@{
+﻿@model LarchRecipe.Models.Ingredient
+
+@{
     ViewBag.Title = "Details";
 }
 
-<h1>@ViewBag.Recipe.Name</h1>
-<p><i>@ViewBag.Recipe.Description</i></p>
-<p>@ViewBag.Recipe.Notes</p>
-<p>Default Servings: @ViewBag.Recipe.Servings</p>
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+        <h1>@ViewBag.Recipe.Name</h1>
+        <p>Default Servings: @ViewBag.Recipe.Servings</p>
+        <p><i>@ViewBag.Recipe.Description</i></p>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+        <h4>Recipe Notes</h4>
+        <p>@ViewBag.Recipe.Notes</p>
+        @Html.ActionLink("Edit", "Edit", "Recipes", new { id = ViewBag.Recipe.ID }, new { @class = "recipe-edit" }) |
+        @Html.ActionLink("Delete", "Delete", "Recipes", new { id = ViewBag.Recipe.ID }, new { @class = "recipe-delete" })
+    </div>
 
-<h3>Ingredients</h3>
-<ul>
+    <div class="col-lg-6 col-md-6 col-sm-5 col-xs-4 ingredients">
+        @{string servings = @ViewBag.Recipe.Servings.ToString();}
 
-    @foreach (var ingredient in ViewBag.Ingredient)
-    {
-
-        <li>@ingredient.Name</li>
-        <ul>
-            <li>@ingredient.Amount  @ingredient.Unit</li>
-        </ul>
-    }
-</ul>
-
-<form method="post" action="">
-    Show requirements for <input type="number" name="ServingSize" value=""> servings:
-    <input type="submit" value="Submit" class="submit">
-</form>
-
-@{string serving = Request["ServingSize"];}
-
-@if (@serving != null)
-{
-    <p>@serving Servings:</p>
-
-    <h3>Ingredients</h3>
-    <ul>
-
-        @foreach (var ingredient in ViewBag.Ingredient)
+        @if (Request["ServingSize"] != null)
         {
 
-            <li>@ingredient.Name</li>
-            <ul>
-                <li>@(@ingredient.SingleServing() * Int32.Parse(serving));  @ingredient.Unit</li>
-            </ul>
+            servings = Request["ServingSize"];
         }
-    </ul>
-}
+        <ul>
+            @{
+                foreach (var ingredient in ViewBag.Ingredients)
+                {
+                    <li>
+                        <strong>@ingredient.Name</strong> @(ingredient.SingleServing() * Int32.Parse(servings))
+
+                        @if ((ingredient.SingleServing() < 1) && ingredient.Unit.EndsWith("s"))
+                {
+                    ingredient.Unit.TrimEnd('s');
+                }
+                else if ((ingredient.SingleServing() < 1) && ingredient.Unit != "sp")
+                {
+                            @(ingredient.Unit + "s")
+                        }
+                    </li>
+                }
+
+            }
+        </ul>
+        <form method="post" action="">
+            Showing ingedients for <input class="serving-input " type="number" name="ServingSize" value="@servings"> servings
+            <input type="submit" value="Submit" class="submit">
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <h3>Add new Ingredient</h3>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(ingredient => ingredient.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(newIngredient => newIngredient.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(ingredient => ingredient.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(newIngredient => newIngredient.Source, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(ingredient => ingredient.Source, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(ingredient => ingredient.Source, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(ingredient => ingredient.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(ingredient => ingredient.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(ingredient => ingredient.Amount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(ingredient => ingredient.Unit, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(ingredient => ingredient.Unit, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(ingredient => ingredient.Unit, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    Add to<input type="submit" value="@ViewBag.Recipe.Name" class="btn btn-default" id="@ViewBag.Recipe.ID" />
+                </div>
+            </div>
+        </div>
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    }

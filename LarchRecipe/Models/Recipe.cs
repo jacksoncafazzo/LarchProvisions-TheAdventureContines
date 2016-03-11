@@ -47,30 +47,19 @@ namespace LarchRecipe.Models
                 return 0;
             }
         }
-        /*I am trying to take the recipe ID that was entered and get the recipes name from that */
-        
-        public string GetRecipeName()
+
+        /*Truncate the ingredient return amounts */
+
+        public string ChopNumbers(double d)
         {
-            RecipesDBContext db = new RecipesDBContext();
-
-            if (RecipeId != 0)
-            {
-                Recipe recipe = db.Recipe.Find(this.RecipeId);
-
-                string recipeName = recipe.GetName();
-
-                return recipeName;
-            }
-            else
-            {
-                return "";
-            }
+            return d.ToString("0.##");
         }
     }
+}
 
-    public class RecipesDBContext : DbContext
-    {
-        public DbSet<Recipe> Recipe { get; set; }
-        public DbSet<Ingredient> Ingredients { get; set; }
-    }
+public class RecipesDBContext : DbContext
+{
+    public DbSet<Recipe> Recipe { get; set; }
+    public DbSet<Ingredient> Ingredients { get; set; }
+}
 }
