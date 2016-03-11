@@ -147,7 +147,13 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\about-main-photo.jpg" />
+    <Content Include="Content\img\carousel-columbia.png" />
+    <Content Include="Content\img\carousel-couple-cooking.png" />
+    <Content Include="Content\img\carousel-larch-mountain.png" />
+    <Content Include="Content\img\carousel-road-fog.png" />
     <Content Include="Content\img\larch-id.png" />
+    <Content Include="Content\img\lil-larch.png" />
+    <Content Include="Content\img\menu-cover3.png" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -196,11 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\.sass-cache\" />
     <Folder Include="Content\css\" />
     <Folder Include="Content\doc\" />
     <Folder Include="Content\js\" />
-    <Folder Include="Content\scss\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

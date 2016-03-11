@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Details";
 }
 
@@ -8,33 +7,29 @@
 <p>@ViewBag.Recipe.Notes</p>
 <p>Default Servings: @ViewBag.Recipe.Servings</p>
 
-
 <h3>Ingredients</h3>
 <ul>
 
-@foreach (var ingredient in ViewBag.Ingredient)
-{
+    @foreach (var ingredient in ViewBag.Ingredient)
+    {
 
-    <li>@ingredient.Name</li>
-      <ul>
-        <li>@ingredient.Amount  @ingredient.Unit</li>
-       </ul>
-}
-    
+        <li>@ingredient.Name</li>
+        <ul>
+            <li>@ingredient.Amount  @ingredient.Unit</li>
+        </ul>
+    }
 </ul>
 
 <form method="post" action="">
     Show requirements for <input type="number" name="ServingSize" value=""> servings:
     <input type="submit" value="Submit" class="submit">
-</form> 
+</form>
 
-@{string serving = Request["ServingSize"];} 
-
+@{string serving = Request["ServingSize"];}
 
 @if (@serving != null)
-    { 
+{
     <p>@serving Servings:</p>
-
 
     <h3>Ingredients</h3>
     <ul>
@@ -48,9 +43,4 @@
             </ul>
         }
     </ul>
-    }
-
-
-
-
-
+}
