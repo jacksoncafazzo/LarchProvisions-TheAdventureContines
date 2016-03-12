@@ -43,8 +43,9 @@
             @{
                 foreach (var ingredient in ViewBag.Ingredients)
                 {
+                    double newServingSize = (ingredient.SingleServing() * Int32.Parse(servings));
                     <li>
-                        <strong>@ingredient.Name</strong> @(ingredient.SingleServing() * Int32.Parse(servings))
+                        <strong>@ingredient.Name</strong> @newServingSize.ToString("0.##")
                         @ingredient.Unit
                     </li>
                 }

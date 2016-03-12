@@ -8,7 +8,7 @@
     height: 100%;
     width: 100%;
 }
-
+/*
 .navbar-inverse {
     background-color: #ffffff !important;
     color: #320d08;
@@ -23,15 +23,15 @@
     .navbar-inverse a:hover {
         color: #320d08;
     }
-
+    */
 body {
     margin: 0;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
+.dropdown {
+    float: right;
+    padding-top: 10px;
 }
-
 /* Override the default bootstrap behavior where horizontal description lists
    will truncate terms that are too long to fit in the left column
 */
@@ -73,6 +73,12 @@ img.logo {
     width: 330px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.larch-id {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 /*
 a.navbar-brand {
@@ -152,12 +158,13 @@ ul {
         padding: 10px;
         font-size: 24px;
     }
-     */
+
 .about-tittle {
     text-align: center;
     margin-top: 40px;
     font-size: 40px;
 }
+    */
 
 .about-image {
     display: flex;
@@ -182,13 +189,14 @@ ul {
     height: auto;
     text-align: center;
 }
-
+/*
 .about {
     padding: 10px;
     margin: 10px;
     font-size: 16px;
     text-align: justify;
 }
+    */
 
 .menu-tittle {
     text-align: center;
@@ -259,7 +267,7 @@ ul {
 
 /*# sourceMappingURL=main.css.map */
 .body-content {
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 tr {

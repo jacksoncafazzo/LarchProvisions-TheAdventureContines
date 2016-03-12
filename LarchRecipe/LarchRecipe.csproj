@@ -174,7 +174,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="about.html" />
     <Content Include="Views\Ingredients\Create.cshtml" />
     <Content Include="Views\Ingredients\Delete.cshtml" />
     <Content Include="Views\Ingredients\Details.cshtml" />
@@ -204,8 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\css\" />
-    <Folder Include="Content\doc\" />
     <Folder Include="Content\js\" />
   </ItemGroup>
   <ItemGroup>
