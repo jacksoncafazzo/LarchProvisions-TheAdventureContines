@@ -4,7 +4,6 @@
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    padding-top: 50px;
     height: 100%;
     width: 100%;
 }
@@ -19,7 +18,7 @@
     .navbar-inverse:hover {
         color: #320d08;
     }
-
+    sc
     .navbar-inverse a:hover {
         color: #320d08;
     }
@@ -30,8 +29,10 @@ body {
 
 .dropdown {
     float: right;
-    padding-top: 10px;
+    padding-top: 13px;
+    padding-right: 10px;
 }
+
 /* Override the default bootstrap behavior where horizontal description lists
    will truncate terms that are too long to fit in the left column
 */
@@ -39,10 +40,6 @@ body {
     white-space: normal;
     margin: 0;
 }
-/*
-    max-width: 280px;
-}
-    */
 
 .carousel {
     height: 100%;
@@ -80,6 +77,7 @@ img.logo {
     justify-content: center;
     margin-bottom: 20px;
 }
+
 /*
 a.navbar-brand {
     background: url(~/Content/img/lil-larch.png) no-repeat top left;
@@ -121,23 +119,27 @@ ul {
     z-index: 1;
 }
     */
-/*
+
 .item {
     align-items: center;
     max-width: none;
     height: 100%;
-    top: 0;
+    top: 0px;
     left: 0;
     height: auto;
     min-width: 100%;
+    font-size: 1.3em;
 }
 
-   */
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
 
 .carousel {
     margin: 0 auto;
     max-width: 100%;
-    background-color: #320d08;
+    padding-left: 0px;
 }
 
 /*
@@ -189,18 +191,17 @@ ul {
     height: auto;
     text-align: center;
 }
-/*
+
 .about {
-    padding: 10px;
-    margin: 10px;
+    padding: 0px;
+    margin: 0px;
     font-size: 16px;
     text-align: justify;
 }
-    */
 
 .menu-tittle {
     text-align: center;
-    margin-top: 40px;
+    /*margin-top: 40px;*/
     font-size: 40px;
 }
 
@@ -267,7 +268,8 @@ ul {
 
 /*# sourceMappingURL=main.css.map */
 .body-content {
-    padding-top: 30px;
+    padding-top: 60px;
+    padding-left: 0px;
 }
 
 tr {
@@ -277,3 +279,23 @@ tr {
     tr a {
         color: #9c7840;
     }
+
+.kitchen {
+    width: 100%;
+}
+
+.white-larch-logo {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0px;
+}
+
+address {
+    text-align: center;
+}
+
+.about-content p {
+    font: bold 2em;
+}
