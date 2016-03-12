@@ -92,8 +92,7 @@ a.navbar-brand {
 }
 
 .ingredients {
-    text-align: center;
-    font-size: 1.3em;
+    padding-top: 10px;
 }
 
 ul {
@@ -128,8 +127,12 @@ ul {
     left: 0;
     height: auto;
     min-width: 100%;
-    font-size: 1.3em;
 }
+
+    .item h3 {
+        text-shadow: 2px 2px 1px black;
+        color: antiquewhite;
+    }
 
 .container-fluid {
     padding-left: 0px;
@@ -271,7 +274,7 @@ ul {
     padding-top: 60px;
     padding-left: 0px;
 }
-
+/*
 tr {
     font-size: 1.4em;
 }
@@ -283,6 +286,7 @@ tr {
 .kitchen {
     width: 100%;
 }
+    */
 
 .white-larch-logo {
     display: flex;
@@ -298,4 +302,17 @@ address {
 
 .about-content p {
     font: bold 2em;
+}
+
+.lil-logo {
+    width: 130px;
+    margin-right: -10px;
+}
+
+.details input[type="text"] {
+    width: 200px;
+}
+
+.control-label {
+    margin-right: 40px;
 }

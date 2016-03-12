@@ -59,6 +59,7 @@ namespace LarchRecipe.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Message = recipe.Name;
             return View(recipe);
         }
 
@@ -104,7 +105,7 @@ namespace LarchRecipe.Controllers
             return RedirectToAction("Index");
         }
 
-        // Get: Recipe/Ingredients/1
+        // Get: Recipes/Ingredients/1
         public ActionResult Ingredients(int? id)
         {
             //Repository viewmodel = new Repository();
@@ -119,20 +120,24 @@ namespace LarchRecipe.Controllers
             return View("Index", "Ingredients", ingredients);
         }
 
+        //Get: Recipes/Details/1
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
+            var ingredients = from i in db.Ingredients
+                              select i;
+            ingredients = ingredients.Where(i => i.RecipeId == id);
+            ViewBag.Ingredients = ingredients;
             ViewBag.Recipe = db.Recipe.Find(id);
-            ViewBag.Ingredient = _repository.GetRecipeIngredients(id);
             ViewBag.Recipes = db.Recipe.ToList();
-            ViewBag.Ingredients = db.Ingredients.ToList();
 
             return View();
         }
+
+        //
 
         protected override void Dispose(bool disposing)
         {

@@ -144,6 +144,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\img\about-main-photo.png" />
     <Content Include="Content\img\carousel-columbia.png" />
     <Content Include="Content\img\carousel-couple-cooking.png" />
     <Content Include="Content\img\carousel-larch-mountain.png" />
