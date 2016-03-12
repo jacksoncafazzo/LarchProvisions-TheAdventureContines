@@ -10,9 +10,19 @@
 }
 
 .navbar-inverse {
-    background-color: #908A87 !important;
-    color: white;
+    background-color: #ffffff !important;
+    color: #320d08;
+    ;
+    border: none;
 }
+
+    .navbar-inverse:hover {
+        color: #320d08;
+    }
+
+    .navbar-inverse a:hover {
+        color: #320d08;
+    }
 
 body {
     margin: 0;
@@ -54,7 +64,9 @@ img.carousel-inner {
 }
 
     .carousel-caption h4 {
-        font-size: 1.4em;
+        color: white;
+        font-size: 1em;
+        text-shadow: 2px 2px 1px black;
     }
 
 img.logo {
@@ -122,9 +134,6 @@ ul {
     background-color: #320d08;
 }
 
-#carousel-example-generic.carousel.slide {
-    background-color: #320d08;
-}
 /*
 .content {
     display: flex;

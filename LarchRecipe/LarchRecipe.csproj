@@ -144,15 +144,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\about-main-photo.jpg" />
     <Content Include="Content\img\carousel-columbia.png" />
     <Content Include="Content\img\carousel-couple-cooking.png" />
     <Content Include="Content\img\carousel-larch-mountain.png" />
     <Content Include="Content\img\carousel-road-fog.png" />
+    <Content Include="Content\img\emily-cake.png" />
+    <Content Include="Content\img\in-the-kitchen.png" />
     <Content Include="Content\img\larch-id.png" />
     <Content Include="Content\img\lil-larch.png" />
     <Content Include="Content\img\menu-cover3.png" />
+    <Content Include="Content\img\ryan-pasta.png" />
+    <Content Include="Content\img\white-larch-logo.png" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
