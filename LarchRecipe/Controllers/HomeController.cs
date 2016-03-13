@@ -11,7 +11,7 @@ namespace LarchRecipe.Controllers
     {
         private RecipesDBContext db = new RecipesDBContext();
 
-        Repository _repository = new Repository();
+        private Repository _repository = new Repository();
 
         public ActionResult Index()
         {
@@ -20,22 +20,17 @@ namespace LarchRecipe.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
-        // GET: Home/ViewBagDemo/1
-        public ActionResult ViewBagDemo(int? id)
+
+        // GET: Home/Menu
+        public ActionResult Menu()
         {
-            ViewBag.Recipe = db.Recipe.Find(id);
-            ViewBag.Ingredient = _repository.GetRecipeIngredients(id);
             return View();
         }
     }

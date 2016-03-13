@@ -44,15 +44,8 @@
     </tr>
     @foreach (var item in Model)
     {
-        double SingleAmount = item.SingleServing();
-        <!-- here we can make this number pretty. check to divide by 2, 4 or 16 for cups,
-            free labels will need to be at the nearest half, maybe quarter,
-            all numbers rounded to the nearest one-hundreth decimal point.
-            Fractions if you're feelin fancy
-        -->
-
-        
-
+        string SingleAmount = item.SingleServing().ToString("0.##");
+        var recipes = ViewBag.Recipes;
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -70,7 +63,7 @@
                 @Html.DisplayFor(modelItem => item.Unit)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RecipeId)
+                @Html.DisplayFor(modelItem => item.RecipeName)
             </td>
 
             <td>

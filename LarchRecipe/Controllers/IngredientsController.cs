@@ -14,7 +14,7 @@ namespace LarchRecipe.Controllers
     {
         private RecipesDBContext db = new RecipesDBContext();
 
-        Repository _repository = new Repository();
+        private Repository _repository = new Repository();
 
         // GET: Ingredients
         public ActionResult Index(string searchString)
@@ -61,7 +61,9 @@ namespace LarchRecipe.Controllers
         // GET: Ingredients/Create
         public ActionResult Create()
         {
-            ViewBag.Recipes = _repository.GetRecipes();
+            var recipes = from i in db.Ingredients
+                          select i;
+            ViewBag.Recipes = recipes;
             return View();
         }
 
@@ -72,8 +74,10 @@ namespace LarchRecipe.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,Source,Amount,Unit,RecipeId")] Ingredient ingredient)
         {
+            Recipe recipe = db.Recipe.Find(ingredient.RecipeId);
             if (ModelState.IsValid)
             {
+                ingredient.RecipeName = recipe.Name;
                 db.Ingredients.Add(ingredient);
                 db.SaveChanges();
                 return RedirectToAction("Index");

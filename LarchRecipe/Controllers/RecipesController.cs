@@ -105,6 +105,7 @@ namespace LarchRecipe.Controllers
             return RedirectToAction("Index");
         }
 
+        /*
         // Get: Recipes/Ingredients/1
         public ActionResult Ingredients(int? id)
         {
@@ -119,6 +120,7 @@ namespace LarchRecipe.Controllers
             ViewBag.Ingredients = ingredients;
             return View("Index", "Ingredients", ingredients);
         }
+        */
 
         //Get: Recipes/Details/1
         public ActionResult Details(int? id)
@@ -137,7 +139,27 @@ namespace LarchRecipe.Controllers
             return View();
         }
 
-        //
+        //Post: Recipes/Details/1
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Details([Bind(Include = "ID, Name, Source, Amount, Unit, RecipeId")] Ingredient ingredient)
+        {
+            Recipe recipe = db.Recipe.Find(ingredient.RecipeId);
+            if (ModelState.IsValid)
+            {
+                ingredient.RecipeName = recipe.Name;
+                db.Ingredients.Add(ingredient);
+                db.SaveChanges();
+                var ingredients = from i in db.Ingredients
+                                  select i;
+                ingredients = ingredients.Where(i => i.RecipeId == ingredient.RecipeId);
+                ViewBag.Ingredients = ingredients;
+                ViewBag.Recipe = db.Recipe.Find(ingredient.RecipeId);
+                ViewBag.Recipes = db.Recipe.ToList();
+                return View();
+            }
+            return View();
+        }
 
         protected override void Dispose(bool disposing)
         {
