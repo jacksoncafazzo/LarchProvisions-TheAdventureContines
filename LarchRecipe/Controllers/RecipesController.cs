@@ -134,7 +134,18 @@ namespace LarchRecipe.Controllers
             ingredients = ingredients.Where(i => i.RecipeId == id);
             ViewBag.Ingredients = ingredients;
             ViewBag.Recipe = db.Recipe.Find(id);
-            ViewBag.Recipes = db.Recipe.ToList();
+            IEnumerable<Recipe> recipes = db.Recipe.ToList();
+            ViewBag.Recipes = recipes;
+            IEnumerable<SelectListItem> RecipeList =
+                from r in recipes
+                select new SelectListItem
+                {
+                    Selected = (r.ID == id),
+                    Text = r.Name,
+                    Value = r.ID.ToString()
+                };
+
+            ViewBag.RecipeList = RecipeList;
 
             return View();
         }
@@ -144,7 +155,8 @@ namespace LarchRecipe.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Details([Bind(Include = "ID, Name, Source, Amount, Unit, RecipeId")] Ingredient ingredient)
         {
-            Recipe recipe = db.Recipe.Find(ingredient.RecipeId);
+            Recipe recipe = new Recipe();
+            recipe = db.Recipe.Find(ingredient.RecipeId);
             if (ModelState.IsValid)
             {
                 ingredient.RecipeName = recipe.Name;
@@ -154,8 +166,14 @@ namespace LarchRecipe.Controllers
                                   select i;
                 ingredients = ingredients.Where(i => i.RecipeId == ingredient.RecipeId);
                 ViewBag.Ingredients = ingredients;
-                ViewBag.Recipe = db.Recipe.Find(ingredient.RecipeId);
+                ViewBag.Recipe = recipe;
                 ViewBag.Recipes = db.Recipe.ToList();
+                List<SelectListItem> RecipeList = new List<SelectListItem>();
+                foreach (Recipe rec in ViewBag.Recipes)
+                {
+                    RecipeList.Add(new SelectListItem { Text = rec.Name, Value = rec.ID.ToString() });
+                }
+                ViewBag.RecipeList = RecipeList;
                 return View();
             }
             return View();

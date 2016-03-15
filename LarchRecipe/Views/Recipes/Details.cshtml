@@ -68,19 +68,22 @@
 
                         @Html.LabelFor(ingredient => ingredient.Name, htmlAttributes: new { @class = "control-label col-md-2" })
 
-                        @Html.EditorFor(newIngredient => newIngredient.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(ingredient => ingredient.Name, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(ingredient => ingredient.Name, "", new { @class = "text-danger" })
                     </div>
                     Source can be the ingredient source or any notes
                     <div class="form-group">
-                        @Html.LabelFor(newIngredient => newIngredient.Source, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.LabelFor(ingredient => ingredient.Source, htmlAttributes: new { @class = "control-label col-md-2" })
 
                         @Html.EditorFor(ingredient => ingredient.Source, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(ingredient => ingredient.Source, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="form-group">
-
+                        @Html.LabelFor(ingredient => ingredient.RecipeId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.DropDownListFor(ingredient => ingredient.RecipeId, ViewBag.RecipeList))
+                        @Html.ValidationMessageFor(ingredient => ingredient.RecipeId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
                         <input type="submit" value="Add" class="btn btn-default" />
                     </div>
                 </form>

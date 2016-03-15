@@ -169,6 +169,7 @@
     <Content Include="Content\img\carousel-road-fog.png" />
     <Content Include="Content\img\emily-cake.png" />
     <Content Include="Content\img\in-the-kitchen.png" />
+    <Content Include="Content\img\Instagram.png" />
     <Content Include="Content\img\larch-id.png" />
     <Content Include="Content\img\lil-larch.png" />
     <Content Include="Content\img\menu-cover3.png" />
@@ -209,6 +210,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\js\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

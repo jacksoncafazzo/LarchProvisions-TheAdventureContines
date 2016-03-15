@@ -1,7 +1,7 @@
 ﻿/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 ﻿ html {
-    font-family: sans-serif;
+    font-family: 'Franklin Gothic';
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     height: 100%;
@@ -25,12 +25,14 @@
     */
 body {
     margin: 0;
+    font-family: 'Franklin Gothic';
 }
 
 .dropdown {
     float: right;
     padding-top: 11px;
     padding-right: 0px;
+    font-family: 'Franklin Gothic';
 }
 
 /* Override the default bootstrap behavior where horizontal description lists
@@ -38,7 +40,7 @@ body {
 */
 .dl-horizontal dt {
     white-space: normal;
-    margin: 0;
+    margin: 0px;
 }
 
 .carousel {
@@ -58,16 +60,19 @@ img.carousel-inner {
 .carousel-caption {
     top: 0;
     bottom: auto;
+    font-family: 'Franklin Gothic';
 }
 
     .carousel-caption h2 {
         color: papayawhip;
         text-shadow: 2px, 2px, 1px, black;
+        font-family: 'Franklin Gothic';
     }
 
     .carousel-caption h4 {
         color: papayawhip;
         text-shadow: 2px 2px 1px black;
+        font-family: 'Franklin Gothic';
     }
 
 .item {
@@ -82,7 +87,7 @@ img.carousel-inner {
 
     .item h2 {
         text-shadow: 2px 2px 1px gray;
-        color: antiquewhite;
+        color: papayawhip;
     }
 
 img.logo {
@@ -97,13 +102,9 @@ img.logo {
     margin-bottom: 20px;
 }
 
-/*
-a.navbar-brand {
-    background: url(~/Content/img/lil-larch.png) no-repeat top left;
-    display: block;
-    width: 340px;
-    height: auto;
-    text-indent: -9999px; /* hides the link text */
+.navbar {
+    font-family: 'Franklin Gothic';
+}
 
 .serving-input {
     width: 71px;
@@ -150,7 +151,6 @@ ul {
     padding-left: 0px;
 }
 
-/*
 .content {
     display: flex;
     justify-content: flex-start;
@@ -169,20 +169,14 @@ ul {
         font-size: 24px;
     }
 
-.about-tittle {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 40px;
-}
-    */
-
 .about-image {
     display: flex;
     justify-content: center;
 }
 
 .about-content {
-    display: flex;
+    padding-right: 0px;
+    font-family: 'Franklin Gothic';
 }
 
 @media (max-width: 650px) {
@@ -197,7 +191,8 @@ ul {
 .about-column1, .about-column2 {
     flex: 1;
     height: auto;
-    text-align: center;
+    text-align: left;
+    width: 50%;
 }
 
 .about {
@@ -207,7 +202,16 @@ ul {
     text-align: justify;
 }
 
-.menu-title {
+.about-title h2 {
+    text-align: center;
+    font-size: 3em;
+}
+
+.about-title {
+    text-align: center;
+}
+
+*/ .menu-title {
     text-align: center;
     /*margin-top: 40px;*/
     font-size: 40px;
@@ -312,6 +316,7 @@ address {
 
 .about-content p {
     font: bold 2em;
+    padding: 10px;
 }
 
 .lil-logo {
