@@ -97,9 +97,9 @@ img.logo {
 }
 
 .larch-id {
-    display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    text-align: center;
 }
 
     .larch-id img {
@@ -212,11 +212,12 @@ ul {
 
 .about-title h2 {
     text-align: center;
-    font-size: 3em;
+    font-family: 'Franklin Gothic';
 }
 
 .about-title {
     text-align: center;
+    max-width: 100%;
 }
 
     .about-title img {
