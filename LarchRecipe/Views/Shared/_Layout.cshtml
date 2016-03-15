@@ -14,17 +14,17 @@
 
     <div class="navbar navbar navbar-fixed-top">
         <div class="container">
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                    Page Navigation
+            <div class="dropdown btn-group">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                    More <span class="caret"></span>
                 </button>
-                <ul class="chef dropdown-menu dropdown-menu-right">
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
                     <li>@Html.ActionLink("Menu", "Menu", "Home")</li>
                     <li>@Html.ActionLink("Order Form", "https://docs.google.com/forms/d/1N1ZXhkgLk6IDEoyabNEUdhfQNJq4SyseoF2_4WVrBIE/viewform?c=0&w=1", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-
                     <li><a href="~/Login1.aspx" target="_blank">Login</a></li>
+                    <li class="divider"></li>
                     <li>@Html.ActionLink("Recipes", "Index", "Recipes")</li>
                     <li>@Html.ActionLink("Ingredients", "Index", "Ingredients")</li>
                 </ul>
